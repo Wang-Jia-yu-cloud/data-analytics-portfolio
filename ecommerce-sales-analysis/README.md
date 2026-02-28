@@ -77,12 +77,17 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 
 ## 📊 Key Findings
 
-- Revenue grew significantly from mid-2015, peaking in **November–December 2015**
-- **WH-04** was the top warehouse region at ¥384.3M revenue
-- **Cat_L13** was the highest revenue category at ¥302M
-- **Search traffic** was the dominant acquisition channel throughout the period
-- Overall CVR was only **1.25%**, indicating significant room to improve conversion
-- **"Needs Review" products** generated the most revenue (¥993M) despite below-average conversion — optimizing these SKUs represents the biggest growth opportunity
+- **Revenue peaked during major promotional events:** Monthly revenue trend shows two clear spikes aligning with China's 618 mid-year festival and Double 11 (11.11), with November 2015 reaching ¥314M — nearly double the previous month. This confirms that promotional campaigns are the primary revenue driver in this category.
+
+- **Regional performance is uneven:** WH-04 led all warehouse regions at ¥384.3M, while WH-02 was the weakest at ¥200.5M. The gap suggests differences in regional demand, product availability, or fulfillment efficiency worth investigating.
+
+- **Cat_L13 dominates category revenue at ¥302M**, followed by Cat_L11 (¥254M) and Cat_L5 (¥227M). Concentration in a few categories suggests the business is heavily dependent on a narrow product range.
+
+- **Purchase funnel drop-off is steep:** 97.4M page visitors converted to only 1.15M orders — a CVR of 1.25%. The largest drop occurs between browsing and cart adds (4.01M), suggesting product pages are not compelling enough to drive purchase intent.
+
+- **"Needs Review" products are the biggest revenue contributor yet most inefficient:** At ¥993M in revenue but below-median conversion, this quadrant represents the highest optimization potential. Improving CVR on even a fraction of these SKUs would meaningfully impact overall revenue.
+
+- **Search is the dominant traffic channel throughout the entire period**, consistently outperforming paid (ZTC), affiliate (TBK), and group-buy (JHS) channels. This held true even during promotional peaks, suggesting organic search is the most reliable and cost-efficient acquisition channel.
 
 ---
 
