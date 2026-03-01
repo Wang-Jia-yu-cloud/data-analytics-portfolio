@@ -89,11 +89,11 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 - **Search is the dominant traffic channel throughout the entire period**, consistently outperforming paid (ZTC), affiliate (TBK), and group-buy (JHS) channels — even during promotional peaks, suggesting organic search is the most reliable acquisition channel for this product mix.
 ---
 
-## 📊 Dashboard Preview
+##  Dashboard Preview
 
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/E_commerce_sales_analysis/Salesoviewdashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-## 📁 Repository Structure
+##  Repository Structure
 ```
 ecommerce-sales-analysis/
 ├── data_preprocessing.ipynb   # Data cleaning in Python
