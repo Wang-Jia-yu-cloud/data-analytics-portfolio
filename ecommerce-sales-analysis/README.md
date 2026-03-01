@@ -1,7 +1,5 @@
 # E-Commerce Sales Analysis
 
-![Python](https://img.shields.io/badge/Python-3.x-blue) ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange) ![Tableau](https://img.shields.io/badge/Tableau-Dashboard-lightblue)
-
 ##  Project Overview
 
 This project uses data from the Alibaba Cloud data competition to analyze e-commerce sales characteristics and extract actionable insights from raw transactional data. The dataset covers 963 products across multiple warehouse regions in China, spanning from October 2014 to December 2015, with a total of 864,771 sales records.
