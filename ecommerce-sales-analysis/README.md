@@ -91,7 +91,7 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 
 ## 📊 Dashboard Preview
 
-🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/shared/KR5RZ4PFJ?:display_count=n&:origin=viz_share_link)
+🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/E_commerce_sales_analysis/Salesoviewdashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## 📁 Repository Structure
 ```
