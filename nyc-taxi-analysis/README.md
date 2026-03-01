@@ -2,14 +2,14 @@
 
 ## Project Overview
 
-This project analyzes New York City yellow taxi trip data collected by the NYC Taxi & Limousine Commission, published as part of the NYC Open Data program. The dataset contains 408,294 trips recorded throughout 2017, covering operational metrics such as trip distance, fare, tip behavior, payment type, and pickup zones. The goal was to uncover operational patterns and performance insights through data cleaning, SQL analysis, and an interactive Tableau dashboard.
+This project explores 2017 NYC yellow taxi trip data to understand operational performance — when and where trips happen, how revenue is distributed, and what influences tipping behavior. The dataset comes from the NYC Taxi & Limousine Commission via NYC Open Data, with 408,294 trips and 18 fields covering fares, distances, payment types, and pickup zones.
 
 ---
 
 ## Dataset
 
 - **Source:** NYC Open Data — 2017 Yellow Taxi Trip Data
-- **Size:** 408,294 rows × 18 columns (sampled from 113M rows)
+- **Size:** 408,294 rows × 18 columns 
 - **Granularity:** Individual trip level
 - **Key fields:** Trip datetime, distance, fare, tip amount, payment type, pickup/dropoff zone
 
@@ -17,11 +17,12 @@ This project analyzes New York City yellow taxi trip data collected by the NYC T
 
 ## Business Questions
 
-- How does revenue and trip volume trend across the year?
-- When are peak demand hours and days?
-- What is the relationship between trip distance and tip behavior?
-- Which pickup zones generate the most trip volume?
-- How do passengers prefer to pay?
+- How does revenue trend across the year, and is there any seasonality?
+- What does a typical trip look like in terms of distance, duration, and value?
+- When are peak demand hours and days of the week?
+- Is there a relationship between trip distance and tip behavior?
+- Which pickup zones are the busiest?
+- How do passengers prefer to pay, and how does it affect tip recording?
 
 ---
 
