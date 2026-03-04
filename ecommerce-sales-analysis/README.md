@@ -8,7 +8,7 @@ This project uses data from the Alibaba Cloud data competition to analyze e-comm
 
 ##  Dataset
 
-- **Source:** Alibaba Cloud date competition dataset
+- **Source:** Alibaba Cloud data competition dataset
 - **Table:** `item_store_feature`
 - **Period:** October 2014 – December 2015
 - **Size:** 864,771 rows × 32 columns
