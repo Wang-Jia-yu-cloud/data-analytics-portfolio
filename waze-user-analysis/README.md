@@ -1,51 +1,60 @@
 ## Executive Summary
 
-### Issue / Problem
+### Business Problem
 
-This analysis uses Waze user data to investigate two questions: 
-- (1) whether device type influences user engagement ？
-- (2) whether statistical or machine learning models can predict user churn so that the business team can take early action to reduce churn.
-- Churn is defined as users who have either uninstalled the app or stopped using it.
+User retention is critical for Waze's long-term growth. Some users gradually 
+reduce their activity and eventually stop using the app. Identifying these users 
+early allows the business team to intervene and improve overall retention.
 
-### Response
-- A two-sample hypothesis test was conducted to examine whether iPhone and Android users differ significantly in their average number of drives.
-  
-- A binomial logistic regression model was built as a baseline 
-  to predict user churn.
-- To obtain a model with the highest predictive power, two machine 
-  learning models were built and compared: Random Forest and XGBoost.
-- The data was split into training, validation, and test sets. 
-  Performing model selection on a separate validation set enables 
-  testing of the champion model on the test set, which gives a better 
-  estimate of future performance.
+This analysis uses a synthetic dataset created in collaboration with Coursera 
+and Waze, containing behavioural data for approximately 14,300 users. 
+The focus is on two questions:
 
-### Impact
-- The hypothesis test found no significant difference in driving 
-  behaviour between iPhone and Android users, suggesting device type 
-  is not a meaningful factor in user engagement.
-- The ML models demonstrate that user behavioural data contains 
-  predictive signal for churn, but the class imbalance in the dataset 
-  (18% churned) limits the model's ability to consistently identify 
-  at-risk users. Additional or more balanced data would be needed to 
-  improve recall performance.
-- Engineered features proved valuable in improving model performance, 
-  suggesting that further feature development could meaningfully 
-  strengthen future iterations of this model.
+- (1) whether device type influences user engagement？
+- (2) whether statistical or machine learning models can predict user churn so 
+  that the business team can take early action to reduce churn.
+
+Churn is defined as users who have either uninstalled the app or stopped using it.
+
+---
+
+### Analysis Approach
+
+- A two-sample hypothesis test was conducted to examine whether iPhone and 
+  Android users differ significantly in their average number of drives.
+- A binomial logistic regression model was developed as a baseline for 
+  predicting user churn.
+- Two machine learning models, Random Forest and XGBoost, were trained and 
+  compared to improve prediction accuracy.
+- The data was split into training, validation, and test sets to support model 
+  selection and evaluation. The final model was assessed on the test set to 
+  provide an unbiased estimate of performance.
+
+---
 
 ### Key Insights
-- `n_days_after_onboarding`, `activity_days`, and `driven_km_drives` 
-  are among the strongest predictors of churn
-- Engineered features such as `km_per_drive`, `drives_per_day`, and 
-  `session_per_day` accounted for several of the top predictors
-- The XGBoost model outperformed both logistic regression and Random 
-  Forest across key metrics, achieving an AUC of 0.689 on the test set
-- Recall remains low across all models due to class imbalance — 
-  churned users are harder to detect than retained users
+
+- Retained users show higher engagement, with more active days and drives, 
+  confirming that user activity frequency is a key indicator of churn risk.
+- There is no significant difference in engagement between iPhone and Android 
+  users, indicating that device type does not affect retention.
+- The strongest predictors of churn in the model are `n_days_after_onboarding`, 
+  `total_navigations_fav1`, and `duration_minutes_drives`.
+- Engineered features like `total_sessions_per_day`, `duration_per_drive`, 
+  and `km_per_drive` are also among the top predictors, highlighting the value 
+  of feature engineering for improving predictive performance.
+- Tree-based models outperform the logistic regression baseline. XGBoost 
+  achieves slightly better results than Random Forest, with an AUC of 0.689 
+  on the test set.
+- Model recall remains limited due to the low churn rate (18%), which makes it 
+  harder to consistently identify users who are likely to churn.
+
+---
 
 ### Recommendation
-A second iteration of this project is recommended, with a focus on 
-collecting more granular user behaviour data and addressing class 
-imbalance through resampling techniques. In the meantime, retention 
-efforts should prioritise newer users with low app activity and 
-declining drive frequency, as these are the strongest behavioural 
-signals of upcoming churn.
+
+- Collect more detailed user behaviour data and address class imbalance to 
+  improve model performance in the next phase.
+- Meanwhile, target retention initiatives at new users with low activity or 
+  declining drive frequency, as these are the clearest early warning signs 
+  of churn.
