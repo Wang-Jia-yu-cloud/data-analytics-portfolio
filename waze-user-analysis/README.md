@@ -59,6 +59,8 @@ Churn is defined as users who have either uninstalled the app or stopped using i
   declining drive frequency, as these are the clearest early warning signs 
   of churn.
 
+---
+
 ### Appendix – Data Dictionary
 
 | Column Name | Type | Description |
