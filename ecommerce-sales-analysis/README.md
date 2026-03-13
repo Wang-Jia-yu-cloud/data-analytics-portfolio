@@ -111,7 +111,10 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 ---
 
 ## Dashboard Preview
+![Sales Overview Dashboard](sales_overview_dashboard.png)
 
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/E_commerce_sales_analysis/Salesoviewdashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+
 
 
