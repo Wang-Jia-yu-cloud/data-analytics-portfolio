@@ -31,7 +31,6 @@ opportunity.
 3. Where do customers drop off in the purchase funnel?
 4. Which products receive high traffic but convert poorly?
 
-
 ---
 
 ##  Tech Stack
@@ -81,14 +80,15 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 - Top 10 products by revenue for quick identification of hero SKUs
 - SKU distribution by category and quadrant to spot category-level patterns
 
----
-
 | Segment | Description |
 |---|---|
 | Star Product | High traffic, high conversion |
 | Hidden Gem | Low traffic, high conversion |
 | Needs Review | High traffic, low conversion |
 | Long Tail | Low traffic, low conversion |
+
+---
+
 
 ##  Key Findings
 
@@ -109,11 +109,4 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/E_commerce_sales_analysis/Salesoviewdashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-##  Repository Structure
-```
-ecommerce-sales-analysis/
-├── data_preprocessing.ipynb   # Data cleaning in Python
-├── ecommerce_analysis.sql     # SQL queries & metric calculation
-├── ecommerce_sales_dashboard.twbx  # Tableau dashboard
-└── README.md
-```
+
