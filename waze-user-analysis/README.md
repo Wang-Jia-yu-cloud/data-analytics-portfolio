@@ -7,7 +7,7 @@ reduce their activity and eventually stop using the app. Identifying these users
 early allows the business team to intervene and improve overall retention.
 
 This analysis uses a synthetic dataset created in collaboration with Coursera 
-and Waze, containing behavioural data for approximately 14,300 users. 
+and Waze, containing behavioural data for approximately 14,999 users. 
 The focus is on two questions:
 
 -  whether device type influences user engagement？
@@ -58,3 +58,20 @@ Churn is defined as users who have either uninstalled the app or stopped using i
 - Meanwhile, target retention initiatives at new users with low activity or 
   declining drive frequency, as these are the clearest early warning signs 
   of churn.
+
+### Appendix – Data Dictionary
+
+| Column Name | Type | Description |
+|---|---|---|
+| `label` | obj | Binary target variable ("retained" vs "churned") for if a user has churned anytime during the course of the month |
+| `sessions` | int | The number of occurrence of a user opening the app during the month |
+| `drives` | int | An occurrence of driving at least 1 km during the month |
+| `device` | obj | The type of device a user starts a session with |
+| `total_sessions` | float | A model estimate of the total number of sessions since a user has onboarded |
+| `n_days_after_onboarding` | int | The number of days since a user signed up for the app |
+| `total_navigations_fav1` | int | Total navigations since onboarding to the user's favorite place 1 |
+| `total_navigations_fav2` | int | Total navigations since onboarding to the user's favorite place 2 |
+| `driven_km_drives` | float | Total kilometers driven during the month |
+| `duration_minutes_drives` | float | Total duration driven in minutes during the month |
+| `activity_days` | int | Number of days the user opens the app during the month |
+| `driving_days` | int | Number of days the user drives (at least 1 km) during the month |
