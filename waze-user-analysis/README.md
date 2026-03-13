@@ -1,29 +1,53 @@
 ## Executive Summary
 
-### Business Problem
-User retention is critical to the long-term growth of the Waze platform. 
-However, a portion of users gradually reduce their engagement and eventually 
-stop using the app. The company needs a reliable way to identify users who are 
-likely to churn so that proactive retention strategies can be implemented.
+### Issue / Problem
+The Waze data team is conducting a data analytics project aimed at 
+improving user retention on the Waze app. For the purposes of this 
+project, churn is defined as users who have uninstalled the app or 
+stopped using it. This project explores two key questions: whether 
+device type influences user engagement, and whether a machine learning 
+model can predict which users are likely to churn based on their 
+behavioural data.
 
 ### Response
-A three-stage analysis was conducted on ~14,300 users:
-- **Hypothesis testing** — evaluated whether device type (iPhone vs Android) influences engagement patterns
-- **Logistic regression** — established a baseline churn prediction model
-- **Tree-based modeling** — built and tuned Random Forest and XGBoost classifiers using cross-validation and feature engineering
+- A two-sample hypothesis test was conducted to determine whether 
+  iPhone and Android users differ significantly in their driving behaviour.
+- A binomial logistic regression model was built as a baseline 
+  to predict user churn.
+- To obtain a model with the highest predictive power, two machine 
+  learning models were built and compared: Random Forest and XGBoost.
+- The data was split into training, validation, and test sets. 
+  Performing model selection on a separate validation set enables 
+  testing of the champion model on the test set, which gives a better 
+  estimate of future performance.
 
 ### Impact
-The XGBoost model (AUC: 0.689) can flag high-risk users before they churn, 
-enabling the operations team to prioritise retention outreach. 
-Note: the model's ability to detect churned users is limited by the low churn 
-rate in the dataset (18%), and should be further validated with more balanced data.
+- The hypothesis test found no significant difference in driving 
+  behaviour between iPhone and Android users, suggesting device type 
+  is not a meaningful factor in user engagement.
+- The ML models demonstrate that user behavioural data contains 
+  predictive signal for churn, but the class imbalance in the dataset 
+  (18% churned) limits the model's ability to consistently identify 
+  at-risk users. Additional or more balanced data would be needed to 
+  improve recall performance.
+- Engineered features proved valuable in improving model performance, 
+  suggesting that further feature development could meaningfully 
+  strengthen future iterations of this model.
 
 ### Key Insights
-- Device type does not meaningfully influence user engagement — iPhone and Android users behave similarly
-- Users with fewer activity days and lower km driven are disproportionately likely to churn
-- `n_days_after_onboarding`, `activity_days`, and `driven_km_drives` are the strongest churn predictors
+- `n_days_after_onboarding`, `activity_days`, and `driven_km_drives` 
+  are among the strongest predictors of churn
+- Engineered features such as `km_per_drive`, `drives_per_day`, and 
+  `session_per_day` accounted for several of the top predictors
+- The XGBoost model outperformed both logistic regression and Random 
+  Forest across key metrics, achieving an AUC of 0.689 on the test set
+- Recall remains low across all models due to class imbalance — 
+  churned users are harder to detect than retained users
 
 ### Recommendation
-Target retention interventions at newer users showing early signs of disengagement — 
-specifically those with declining drive frequency and low app activity — 
-as these are the clearest behavioural signals of upcoming churn.
+A second iteration of this project is recommended, with a focus on 
+collecting more granular user behaviour data and addressing class 
+imbalance through resampling techniques. In the meantime, retention 
+efforts should prioritise newer users with low app activity and 
+declining drive frequency, as these are the strongest behavioural 
+signals of upcoming churn.
