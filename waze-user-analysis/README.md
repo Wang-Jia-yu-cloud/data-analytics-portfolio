@@ -3,9 +3,9 @@
 ### Issue / Problem
 
 This analysis uses Waze user data to investigate two questions: 
-(1) whether device type influences user engagement ？
-(2) whether statistical or machine learning models can predict user churn so that the business team can take early action to reduce churn.
-Churn is defined as users who have either uninstalled the app or stopped using it.
+- (1) whether device type influences user engagement ？
+- (2) whether statistical or machine learning models can predict user churn so that the business team can take early action to reduce churn.
+- Churn is defined as users who have either uninstalled the app or stopped using it.
 
 ### Response
 - A two-sample hypothesis test was conducted to determine whether 
