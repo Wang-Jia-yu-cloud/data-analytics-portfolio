@@ -1,8 +1,16 @@
 # E-Commerce Sales Analysis
 
-##  Project Overview
+## Executive Summary
 
-This project uses data from the Alibaba Cloud data competition to analyze e-commerce sales characteristics and extract actionable insights from raw transactional data. The dataset covers 963 products across multiple warehouse regions in China, spanning from October 2014 to December 2015, with a total of 864,771 sales records.
+This project analyzes e-commerce sales data from the Alibaba Cloud Data 
+Competition to understand revenue trends, product performance, and customer 
+purchase behavior. Using Python, MySQL, and Tableau, the analysis identifies 
+key revenue drivers, product opportunities, and funnel inefficiencies.
+
+Key findings show that revenue is highly concentrated during major promotional 
+events, warehouse performance varies across regions, and a large group of 
+high-revenue but low-conversion products represent the biggest optimization 
+opportunity.
 
 ---
 
@@ -18,10 +26,11 @@ This project uses data from the Alibaba Cloud data competition to analyze e-comm
 
 ##  Business Questions
 
-- How has revenue trended over time, and when did peak sales occur?
-- Which warehouse regions and product categories drive the most revenue?
-- Where do customers drop off in the purchase funnel?
-- Which products are high-traffic but low-conversion, and which are hidden gems?
+1. What are the key drivers of revenue growth over time?
+2. Which warehouse regions and product categories contribute the most revenue?
+3. Where do customers drop off in the purchase funnel?
+4. Which products receive high traffic but convert poorly?
+
 
 ---
 
@@ -73,6 +82,13 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 - SKU distribution by category and quadrant to spot category-level patterns
 
 ---
+
+| Segment | Description |
+|---|---|
+| Star Product | High traffic, high conversion |
+| Hidden Gem | Low traffic, high conversion |
+| Needs Review | High traffic, low conversion |
+| Long Tail | Low traffic, low conversion |
 
 ##  Key Findings
 
