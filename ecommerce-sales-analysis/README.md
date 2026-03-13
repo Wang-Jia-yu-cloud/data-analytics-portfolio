@@ -33,16 +33,6 @@ opportunity.
 
 ---
 
-##  Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| Python (pandas, numpy, matplotlib, sqlalchemy, pymysql) | Data cleaning, EDA & loading data into MySQL |
-| MySQL | Data storage, metric calculation, window functions, CTE, product segmentation |
-| Tableau | Interactive dashboard & visualization |
-
----
-
 ##  Workflow
 
 ### 1️⃣ Data Cleaning — Python
