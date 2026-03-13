@@ -8,8 +8,8 @@ This analysis uses Waze user data to investigate two questions:
 - Churn is defined as users who have either uninstalled the app or stopped using it.
 
 ### Response
-- A two-sample hypothesis test was conducted to determine whether 
-  iPhone and Android users differ significantly in their driving behaviour.
+- A two-sample hypothesis test was conducted to examine whether iPhone and Android users differ significantly in their average number of drives.
+  
 - A binomial logistic regression model was built as a baseline 
   to predict user churn.
 - To obtain a model with the highest predictive power, two machine 
