@@ -2,29 +2,30 @@
 
 ## Executive Summary
 
-This project analyzes e-commerce sales data from the Alibaba Cloud Data 
-Competition to understand revenue trends, product performance, and customer 
-purchase behavior. Using Python, MySQL, and Tableau, the analysis identifies 
-key revenue drivers, product opportunities, and funnel inefficiencies.
+This project analyzes e-commerce sales data from the Alibaba Cloud Data Competition 
+to understand revenue trends, product performance, and customer purchase behavior. 
+Using Python, MySQL, and Tableau, the analysis identifies key revenue drivers, 
+product opportunities, and funnel inefficiencies.
 
-Key findings show that revenue is highly concentrated during major promotional 
-events, warehouse performance varies across regions, and a large group of 
-high-revenue but low-conversion products represent the biggest optimization 
-opportunity.
-
----
-
-##  Dataset
-
-- **Source:** Alibaba Cloud data competition dataset
-- **Table:** `item_store_feature`
-- **Period:** October 2014 – December 2015
-- **Size:** 864,771 rows × 32 columns
-- **Granularity:** Daily product-warehouse level behavioral and transaction data
+Key findings show that revenue is highly concentrated during major promotional events, 
+warehouse performance varies across regions, and a large group of high-revenue but 
+low-conversion products represent the biggest optimization opportunity.
 
 ---
 
-##  Business Questions
+## Dataset
+
+| Attribute | Value |
+|---|---|
+| Source | Alibaba Cloud Data Competition |
+| Table | `item_store_feature` |
+| Period | October 2014 – December 2015 |
+| Size | 864,771 rows × 32 columns |
+| Granularity | Daily product-warehouse level behavioral and transaction data |
+
+---
+
+## Business Questions
 
 1. What are the key drivers of revenue growth over time?
 2. Which warehouse regions and product categories contribute the most revenue?
@@ -33,7 +34,7 @@ opportunity.
 
 ---
 
-##  Workflow
+## Workflow
 
 ### 1️⃣ Data Cleaning — Python
 - Imported raw data and assigned column names (no header in source file)
@@ -51,8 +52,8 @@ opportunity.
 - Built a full product scorecard combining revenue, conversion rate, average order value, and warehouse reach
 - Created a reusable view `v_sales_dashboard` consolidating all metrics, time dimensions, traffic channels, and product quadrants to power Tableau
 
-
 ### 3️⃣ Visualization — Tableau
+
 Two-page interactive dashboard with filters for year/month, warehouse, and category level:
 
 **Page 1 — Sales Overview**
@@ -61,7 +62,6 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 - Warehouse and category breakdown to pinpoint top-performing segments
 - Traffic source analysis to understand which channels drive visits
 - Purchase funnel to identify where customers drop off
-
 
 **Page 2 — Product Analysis**
 - KPI summary: Total SKUs · Star Product · Hidden Gem · Needs Review · Long Tail · Avg CVR
@@ -79,23 +79,38 @@ Two-page interactive dashboard with filters for year/month, warehouse, and categ
 
 ---
 
+## Key Findings
 
-##  Key Findings
+- **Revenue peaked during major promotional events:** Monthly revenue trend shows 
+  two clear spikes aligning with China's 618 mid-year festival and Double 11 (11.11), 
+  with November 2015 reaching ¥314M — nearly double the previous month. This confirms 
+  that promotional campaigns are the primary revenue driver in this category.
 
-- **Revenue peaked during major promotional events:** Monthly revenue trend shows two clear spikes aligning with China's 618 mid-year festival and Double 11 (11.11), with November 2015 reaching ¥314M — nearly double the previous month. This confirms that promotional campaigns are the primary revenue driver in this category.
+- **Regional performance is uneven:** WH-04 led all warehouse regions at ¥384.3M, 
+  while WH-02 was the weakest at ¥200.5M. The gap suggests differences in regional 
+  demand, product availability, or fulfillment efficiency worth investigating.
 
-- **Regional performance is uneven:** WH-04 led all warehouse regions at ¥384.3M, while WH-02 was the weakest at ¥200.5M. The gap suggests differences in regional demand, product availability, or fulfillment efficiency worth investigating.
+- **Cat_L13 dominates category revenue at ¥302M**, followed by Cat_L11 (¥254M) and 
+  Cat_L5 (¥227M). Concentration in a few categories suggests the business is heavily 
+  dependent on a narrow product range.
 
-- **Cat_L13 dominates category revenue at ¥302M**, followed by Cat_L11 (¥254M) and Cat_L5 (¥227M). Concentration in a few categories suggests the business is heavily dependent on a narrow product range.
+- **Purchase funnel drop-off is steep:** 97.4M page visitors converted to only 1.15M 
+  orders — a CVR of 1.25%. The largest drop occurs between browsing and cart adds 
+  (4.01M), suggesting product pages are not compelling enough to drive purchase intent.
 
-- **Purchase funnel drop-off is steep:** 97.4M page visitors converted to only 1.15M orders — a CVR of 1.25%. The largest drop occurs between browsing and cart adds (4.01M), suggesting product pages are not compelling enough to drive purchase intent.
+- **"Needs Review" products are the biggest revenue contributor yet most inefficient:** 
+  At ¥993M in revenue but below-median conversion, this quadrant represents the highest 
+  optimization potential. Improving CVR on even a fraction of these SKUs would 
+  meaningfully impact overall revenue.
 
-- **"Needs Review" products are the biggest revenue contributor yet most inefficient:** At ¥993M in revenue but below-median conversion, this quadrant represents the highest optimization potential. Improving CVR on even a fraction of these SKUs would meaningfully impact overall revenue.
+- **Search is the dominant traffic channel throughout the entire period**, consistently 
+  outperforming paid (ZTC), affiliate (TBK), and group-buy (JHS) channels — even during 
+  promotional peaks, suggesting organic search is the most reliable acquisition channel 
+  for this product mix.
 
-- **Search is the dominant traffic channel throughout the entire period**, consistently outperforming paid (ZTC), affiliate (TBK), and group-buy (JHS) channels — even during promotional peaks, suggesting organic search is the most reliable acquisition channel for this product mix.
 ---
 
-##  Dashboard Preview
+## Dashboard Preview
 
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/E_commerce_sales_analysis/Salesoviewdashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
