@@ -1,38 +1,40 @@
 # NYC Taxi Operational Performance Analysis
 
-## Project Overview
+## Executive Summary
 
-This project explores 2017 NYC yellow taxi trip data to understand operational performance — when and where trips happen, how revenue is distributed, and what influences tipping behavior. The dataset comes from the NYC Taxi & Limousine Commission via NYC Open Data, with 408,294 trips and 18 fields covering fares, distances, payment types, and pickup zones.
+This project analyzes 2017 NYC yellow taxi trip data to evaluate operational 
+performance and passenger behavior. The analysis examines trip demand patterns, 
+revenue distribution, tipping behavior, and geographic pickup activity.
+
+Results show that taxi demand is highly concentrated during evening commute hours, 
+most trips are short urban journeys, and credit card payments dominate transaction 
+methods. Because cash tips are not recorded in the dataset, the observed tipping 
+behavior likely underestimates actual tip levels.
 
 ---
 
 ## Dataset
 
-- **Source:** NYC Open Data — 2017 Yellow Taxi Trip Data
-- **Size:** 408,294 rows × 18 columns 
-- **Granularity:** Individual trip level
-- **Key fields:** Trip datetime, distance, fare, tip amount, payment type, pickup/dropoff zone
+| Attribute | Value |
+|---|---|
+| Source | NYC Open Data — 2017 Yellow Taxi Trip Data |
+| Rows | 408,294 |
+| Columns | 18 |
+| Granularity | Individual trip level |
+
+Key variables include trip timestamps, trip distance, fare amount, tip amount, 
+payment type, and pickup/dropoff zones.
 
 ---
 
 ## Business Questions
 
-- How does revenue trend across the year, and is there any seasonality?
-- What does a typical trip look like in terms of distance, duration, and value?
-- When are peak demand hours and days of the week?
-- Is there a relationship between trip distance and tip behavior?
-- Which pickup zones are the busiest?
-- How do passengers prefer to pay, and how does it affect tip recording?
-
----
-
-## Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| Python (pandas, numpy) | Data cleaning |
-| MySQL | Data storage, metric calculation & view creation |
-| Tableau | Interactive dashboard connected to cleaned CSV |
+1. How does revenue trend across the year, and is there any seasonality?
+2. What does a typical trip look like in terms of distance, duration, and value?
+3. When are peak demand hours and days of the week?
+4. Is there a relationship between trip distance and tipping behavior?
+5. Which pickup zones generate the highest trip volumes?
+6. How do passengers prefer to pay, and how does this affect recorded tipping behavior?
 
 ---
 
@@ -69,12 +71,31 @@ Interactive dashboard with filters for pickup hour, payment type, and month:
 
 ## Key Findings
 
-- **Revenue remained stable throughout 2017** with no significant seasonal spikes, suggesting NYC taxi demand is driven by consistent daily commuting and urban travel patterns.
-- **Peak demand is concentrated around 18:00–19:00**, with the lowest volume in early morning hours (2:00–5:00 AM).
-- **Friday sees the highest avg daily trips at 65.1**, while Sunday and Monday are the slowest days.
-- **Most trips are under 4 miles**, confirming the service is primarily used for short urban commutes rather than long-distance travel.
-- **Tip rate shows no strong correlation with trip distance**, suggesting tipping behavior is more influenced by payment method than trip length.
-- **Credit card dominates at 72.96%** of all trips, while cash accounts for 26.63% — since cash tips are not recorded in the dataset, actual tip rates are likely higher than what the data shows.
+**Demand peaks during evening commute hours**  
+Trip volume peaks around **18:00–19:00**, reflecting typical evening commuting 
+patterns. The lowest activity occurs between **2:00–5:00 AM**.
+
+**Trip distances are generally short**  
+Most trips are **under 4 miles**, indicating the service primarily supports 
+short urban travel rather than long-distance transportation.
+
+**Revenue shows stable demand across the year**  
+Revenue levels remain relatively consistent throughout 2017, suggesting taxi 
+demand is driven by daily commuting patterns rather than strong seasonal effects.
+
+**Friday is the busiest day of the week**  
+Average daily trips peak on **Fridays (65.1 trips)**, while Sunday and Monday 
+record the lowest demand.
+
+**Tip behavior shows little relationship with distance**  
+Tip rate does not show a strong correlation with trip distance, indicating 
+tipping behavior may depend more on payment method or passenger habits.
+
+**Credit card is the dominant payment method**  
+Credit card payments account for **72.96% of trips**, while cash represents 
+**26.63%**. Because cash tips are not recorded in the dataset, the observed 
+tipping rates likely underestimate actual tip behavior.
+
 
 ---
 
@@ -84,11 +105,4 @@ Interactive dashboard with filters for pickup hour, payment type, and month:
 
 ---
 
-## Repository Structure
-```
-nyc-taxi-analysis/
-├── nyc_taxi_cleaning.ipynb     # Data cleaning in Python
-├── nyc_taxi_analysis.sql       # SQL queries & view creation
-├── nyc_taxi_dashboard.twbx     # Tableau dashboard
-└── README.md
-```
+
