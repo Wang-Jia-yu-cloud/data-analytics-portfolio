@@ -10,8 +10,8 @@ This analysis uses a synthetic dataset created in collaboration with Coursera
 and Waze, containing behavioural data for approximately 14,300 users. 
 The focus is on two questions:
 
-- (1) whether device type influences user engagement？
-- (2) whether statistical or machine learning models can predict user churn so 
+-  whether device type influences user engagement？
+-  whether statistical or machine learning models can predict user churn so 
   that the business team can take early action to reduce churn.
 
 Churn is defined as users who have either uninstalled the app or stopped using it.
