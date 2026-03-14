@@ -1,7 +1,5 @@
 # NYC Taxi Operational Performance Analysis
 
-# NYC Taxi Operational Performance Analysis
-
 ## Executive Summary
 
 This project analyzes 2017 NYC yellow taxi trip data to evaluate operational 
