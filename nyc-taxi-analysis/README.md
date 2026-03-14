@@ -1,5 +1,7 @@
 # NYC Taxi Operational Performance Analysis
 
+# NYC Taxi Operational Performance Analysis
+
 ## Executive Summary
 
 This project analyzes 2017 NYC yellow taxi trip data to evaluate operational 
@@ -57,15 +59,19 @@ payment type, and pickup/dropoff zones.
   - `vw_top_pickup_zones` — top 10 busiest pickup zones
 
 ### 3️⃣ Visualization — Tableau
-Interactive dashboard with filters for pickup hour, payment type, and month:
 
-- KPI cards for a quick overview of overall performance
-- Revenue and avg trip value trends to see how business performs across the year
-- Trip distance distribution to understand what a typical trip looks like
+An interactive dashboard was built to explore operational performance and 
+passenger behavior. Key dashboard components include:
+
+- KPI cards summarizing overall performance
+- Revenue and average trip value trends across the year
+- Trip distance distribution to to understand what a typical trip looks like
 - Hourly and daily trip volume to spot peak demand periods
 - Tip rate vs. distance to see whether trip length affects tipping behavior
 - Payment type breakdown to understand passenger preferences
 - Top 10 pickup zones to identify where most trips originate
+
+Filters allow users to explore results by hour, month, and payment type.
 
 ---
 
@@ -96,13 +102,10 @@ Credit card payments account for **72.96% of trips**, while cash represents
 **26.63%**. Because cash tips are not recorded in the dataset, the observed 
 tipping rates likely underestimate actual tip behavior.
 
-
 ---
 
 ## Dashboard Preview
 
+
+
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/NYCTaxiOperationalPeformanceAnalysis/TaxiBusinessPerformanceDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-
----
-
-
