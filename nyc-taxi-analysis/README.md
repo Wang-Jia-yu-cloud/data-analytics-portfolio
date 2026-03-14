@@ -104,6 +104,6 @@ tipping rates likely underestimate actual tip behavior.
 
 ## Dashboard Preview
 
-
+![Taxi Performance Dashboard](Taxi_Performance_Dashboard.png)
 
 🔗 [View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/NYCTaxiOperationalPeformanceAnalysis/TaxiBusinessPerformanceDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
