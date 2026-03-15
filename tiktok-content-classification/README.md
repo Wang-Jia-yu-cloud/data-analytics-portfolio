@@ -38,8 +38,12 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 ![Feature Importance](feature_importance.png)
 
 - **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
+  
+- **Claim and opinion videos use distinctly different language** — Claim videos frequently use words like "read", "learned", "media", and "discovered", suggesting unverified second-hand information. Opinion videos use words like "view", "opinion", "feeling", and "impression", reflecting personal perspectives.
 
-- **Machine learning models perform extremely well** — Random Forest achieved near-perfect accuracy on the test set, demonstrating that the model can reliably classify videos based on engagement patterns.
+![Word Frequency](word_frequency.png)
+
+- **Machine learning models perform extremely well** — Random Forest achieved 99% precision, 99% recall, and 100% accuracy on the test set, with only 17 misclassifications out of 3,817 samples, demonstrating that the model can reliably classify videos based on engagement patterns.
 
 ![Confusion Matrix](confusion_matrix.png)
   
