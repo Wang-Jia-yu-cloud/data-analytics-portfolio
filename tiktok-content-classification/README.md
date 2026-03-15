@@ -2,9 +2,7 @@
 
 ## Executive Summary
 
-This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning can accurately classify them.
-
-EDA, hypothesis testing, and feature engineering identified engagement metrics and content characteristics as strong signals. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
+This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning can accurately classify them. EDA, hypothesis testing, and feature engineering identified engagement metrics and content characteristics as strong signals. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
 
 ---
 
