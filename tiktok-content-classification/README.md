@@ -31,11 +31,20 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 
 ## Key Insights
 
-- **Claim videos get more views** —
-Claim-based videos receive significantly higher view counts than opinion videos, confirming that content type influences visibility.
+- **Claim videos get more views** — Claim-based videos receive significantly higher view counts than opinion videos, confirming that content type influences visibility.
+
+![Engagement Metrics](images/engagement_metrics.png)
+
 - **Engagement metrics dominate classification** — Features like video views, likes, and shares are the strongest predictors in the model, showing that user interaction patterns effectively differentiate claim vs opinion videos.
+
+![Feature Importance](images/feature_importance.png)
+
 - **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
+
 - **Machine learning models perform extremely well** — Random Forest achieved near-perfect accuracy on the test set, demonstrating that the model can reliably classify videos based on engagement patterns.
+
+![Confusion Matrix](images/confusion_matrix.png)
+  
 ---
 
 ## Data Dictionary
