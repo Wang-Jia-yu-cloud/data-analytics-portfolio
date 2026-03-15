@@ -40,11 +40,11 @@ The dataset contains 19,382 TikTok videos with engagement metrics, content featu
 
 ![Feature Importance](feature_importance.png)
 
-- **Claim and opinion videos use distinctly different language** — Claim videos frequently use words like "read", "learned", "media", and "discovered", suggesting unverified second-hand information. Opinion videos use words like "view", "opinion", "feeling", and "impression", reflecting personal perspectives.
+- **Claim and opinion videos use distinctly different language** — Claim videos frequently contain words such as “read,” “learned,” “media,” and “discovered,” which often reference second-hand information. Opinion videos more commonly use words like “view,” “opinion,” “feeling,” and “impression,” reflecting personal perspectives.
 
 ![Word Frequency](word_frequency.png)
 
-- **Machine learning models perform extremely well** — Random Forest achieved 99% precision, 99% recall, and 100% accuracy on the test set, with only 17 misclassifications out of 3,817 samples, demonstrating that the model can reliably classify videos based on engagement patterns.
+- **Machine learning models perform extremely well** — Random Forest achieved 99% precision, 99% recall, and 100% accuracy on the test set, with only 17 misclassifications out of 3,817 samples, showing that the model can reliably classify videos.
 
 ![Confusion Matrix](confusion_matrix.png)
   
