@@ -12,7 +12,7 @@ EDA, hypothesis testing, and feature engineering identified engagement metrics a
 TikTok hosts a large volume of user-generated content, including factual claims and personal opinions. Users can flag content that may contain claims, but the high number of reports creates a backlog for moderators. Accurately classifying videos as claim-based or opinion-based can help prioritize moderation, detect misinformation, and improve algorithmic ranking.
 
 **Key questions:**
-1. Do claim videos differ in engagement from opinion videos?
+1. Does the number of views differ between claim and opinion videos?
 2. Can machine learning classify claim vs opinion videos accurately?
 
 Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator attributes.
