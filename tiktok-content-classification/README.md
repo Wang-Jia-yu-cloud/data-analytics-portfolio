@@ -9,12 +9,7 @@ EDA, hypothesis testing, and feature engineering identified engagement metrics a
 ---
 
 ## Business Problem
-
-User-generated content on TikTok includes factual claims and personal opinions. Accurately classifying these is key for:
-
-- Content moderation
-- Misinformation detection
-- Algorithmic ranking
+TikTok hosts a large volume of user-generated content, including factual claims and personal opinions. Users can flag content that may contain claims, but the high number of reports creates a backlog for moderators. Accurately classifying videos as claim-based or opinion-based can help prioritize moderation, detect misinformation, and improve algorithmic ranking.
 
 **Key questions:**
 1. Do claim videos differ in engagement from opinion videos?
