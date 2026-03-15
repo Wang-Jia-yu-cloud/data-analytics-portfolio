@@ -63,4 +63,9 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 | video_download_count | float | Number of downloads |
 | video_comment_count | float | Number of comments |
 
+---
+
+## Skills Demonstrated
+
+`Python` · `Exploratory Data Analysis` · `Hypothesis Testing` · `Feature Engineering` · `Machine Learning Modeling` · `Model Evaluation`
 
