@@ -2,18 +2,22 @@
 
 ## Executive Summary
 
-This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning can accurately classify them. EDA, hypothesis testing, and feature engineering identified engagement metrics and content characteristics as strong signals. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
+This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning models can classify them accurately.
+
+Exploratory analysis and hypothesis testing show that engagement metrics are strong signals for distinguishing the two content types. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
 
 ---
 
 ## Business Problem
-TikTok hosts a large volume of user-generated content, including factual claims and personal opinions. Users can flag content that may contain claims, but the high number of reports creates a backlog for moderators. Accurately classifying videos as claim-based or opinion-based can help prioritize moderation, detect misinformation, and improve algorithmic ranking.
 
-**Key questions:**
-1. Does the number of views differ between claim and opinion videos?
+TikTok hosts a large volume of user-generated content, including factual claims and personal opinions. Users can report videos that may contain misleading claims, but the high number of reports creates a backlog for moderators.
+Accurately identifying claim-based content can help prioritize moderation efforts, detect potential misinformation, and improve content ranking.
+
+This analysis focuses on two key questions:
+1. Do claim-based videos receive more views than opinion-based videos?
 2. Can machine learning classify claim vs opinion videos accurately?
 
-Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator attributes.
+The dataset contains 19,382 TikTok videos with engagement metrics, content features, and creator attributes.
 
 ---
 
