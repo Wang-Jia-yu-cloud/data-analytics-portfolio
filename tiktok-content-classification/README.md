@@ -43,18 +43,6 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 
 ---
 
-## Recommendation
-
-Automated classification can help flag claim-based videos for review. Future improvements include:
-
-- NLP on transcripts
-- Temporal engagement features
-- Additional moderation signals
-
-These steps can enhance detection and moderation effectiveness.
-
----
-
 ## Data Dictionary
 
 | Column | Type | Description |
