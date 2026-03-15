@@ -2,9 +2,7 @@
 
 ## Executive Summary
 
-This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning models can classify them accurately.
-
-Exploratory analysis and hypothesis testing show that engagement metrics are strong signals for distinguishing the two content types. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
+This project analyzes TikTok videos to distinguish claim-based content from opinion-based content and evaluate whether machine learning models can classify them accurately. Exploratory analysis and hypothesis testing show that engagement metrics are strong signals for distinguishing the two content types. Random Forest achieved nearly 100% accuracy on the test set, outperforming XGBoost.
 
 ---
 
@@ -34,6 +32,8 @@ The dataset contains 19,382 TikTok videos with engagement metrics, content featu
 ## Key Insights
 
 - **Claim videos get more views** — Claim-based videos receive significantly higher view counts than opinion videos, confirming that content type influences visibility.
+- Claim videos receive significantly more views
+Claim-based videos have higher average view counts than opinion videos. The hypothesis test confirms that the difference is statistically significant.
 
 ![Engagement Metrics](engagement_metrics.png)
 
