@@ -31,7 +31,7 @@ The dataset contains 19,382 TikTok videos with engagement metrics, content featu
 
 ## Key Insights
 
-- **Claim videos get more views** — Claim-based videos receive significantly higher view counts than opinion videos, confirming that content type influences visibility.
+- **Claim videos get more views** — Claim-based videos receive significantly higher view counts, likes, shares, and comments than opinion videos. A Welch t-test confirmed this difference is statistically significant (t = 166.89, p ≈ 0.0).
 
 ![Engagement Metrics](engagement_metrics.png)
 
