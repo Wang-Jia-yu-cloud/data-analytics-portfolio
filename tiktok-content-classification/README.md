@@ -34,11 +34,10 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 ![Engagement Metrics](engagement_metrics.png)
 
 - **Engagement metrics dominate classification** — Features like video views, likes, and shares are the strongest predictors in the model, showing that user interaction patterns effectively differentiate claim vs opinion videos.
+- - **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
 
 ![Feature Importance](feature_importance.png)
 
-- **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
-  
 - **Claim and opinion videos use distinctly different language** — Claim videos frequently use words like "read", "learned", "media", and "discovered", suggesting unverified second-hand information. Opinion videos use words like "view", "opinion", "feeling", and "impression", reflecting personal perspectives.
 
 ![Word Frequency](word_frequency.png)
