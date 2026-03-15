@@ -34,7 +34,7 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 ![Engagement Metrics](engagement_metrics.png)
 
 - **Engagement metrics dominate classification** — Features like video views, likes, and shares are the strongest predictors in the model, showing that user interaction patterns effectively differentiate claim vs opinion videos.
-- - **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
+- **Content characteristics have limited impact** — Video duration and transcription text length contribute very little to the model, indicating that engagement signals outweigh structural content features.
 
 ![Feature Importance](feature_importance.png)
 
@@ -62,3 +62,5 @@ Dataset: 19,382 TikTok videos with metadata, engagement metrics, and creator att
 | video_share_count | float | Number of shares |
 | video_download_count | float | Number of downloads |
 | video_comment_count | float | Number of comments |
+
+
