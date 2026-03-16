@@ -2,28 +2,26 @@
 
 ## Executive Summary
 
-Salifort Motors is experiencing a high employee turnover rate, leading to operational disruption and increased recruitment and training costs. To better understand the issue, the HR team conducted an employee survey to identify factors associated with attrition.
+Salifort Motors is experiencing elevated employee turnover, creating operational disruption and increased hiring costs. This project analyzes employee survey data to identify the key drivers of attrition and develop predictive models that identify employees at risk of leaving.
 
-This project analyzes the survey data to identify the main drivers of employee turnover and build models that predict which employees are most likely to leave.
+After removing duplicate records, 11,991 employee records were analyzed. Exploratory analysis shows that employee satisfaction, tenure, and workload are the strongest factors associated with attrition. Clustering analysis further identified three employee segments with very different attrition risk levels.
 
-After removing duplicate records, 11,991 employee records were included in the analysis. Exploratory analysis shows that satisfaction level, tenure, and workload are the strongest factors associated with attrition. Clustering analysis further identified three employee segments with very different attrition risks.
+Several machine learning models were evaluated, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. XGBoost achieved the best performance, with 97% accuracy, 0.987 AUC, and an F1-score of 0.91 on the test set.
 
-Several predictive models were tested, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. XGBoost achieved the best performance, with 97% accuracy, an AUC of 0.987, and an F1-score of 0.91 on the test set.
-
-These findings help the company better understand employee turnover patterns and support more targeted retention strategies.
+These results provide insights into employee turnover patterns and support more targeted retention strategies.
 
 ---
 
 ## Business Problem
 
-Employee turnover creates substantial costs through recruitment, onboarding, and lost productivity. Salifort Motors wants to understand why employees leave and which employees are most at risk of departure so that targeted retention strategies can be implemented.
+Employee turnover generates substantial costs through recruitment, onboarding, and lost productivity. Salifort Motors aims to understand why employees leave and which employees are most at risk of departure, enabling more targeted retention strategies.
 
 This analysis focuses on four key questions:
 
 1. What employee characteristics are most strongly associated with attrition?
 2. Are there distinct employee groups with different attrition risk profiles?
-3. Can predictive models accurately identify employees likely to leave?
-4. What actions could help improve employee retention?
+3. How accurately can employee attrition be predicted using historical data?
+4. What actions could improve employee retention?
 
 The dataset contains 14,999 employee records (11,991 after removing duplicates), including satisfaction level, workload metrics, tenure, promotion history, department, and salary level.
 
@@ -31,38 +29,30 @@ The dataset contains 14,999 employee records (11,991 after removing duplicates),
 
 ## Analysis Approach
 
-The analysis followed a structured workflow combining exploratory analysis, statistical testing, employee segmentation, and predictive modeling.
-
 **Exploratory Data Analysis**
-Compared satisfaction levels, workload, and tenure distributions between employees who stayed and those who left. Key visualizations include KDE plots, scatterplots, and a correlation heatmap.
+Compared satisfaction levels, workload, and tenure between employees who stayed and those who left using KDE plots, scatterplots, and correlation analysis.
 
 **Hypothesis Testing**
-A Chi-square test was conducted to evaluate whether salary level is associated with employee attrition.
+A Chi-square test was conducted to examine the relationship between salary level and employee attrition.
 
 **Employee Segmentation**
-K-Means clustering (k=3) was applied to identify groups of employees with similar work patterns and attrition risk profiles.
+K-Means clustering (k = 3) was used to identify groups of employees with similar work patterns and attrition risk.
 
-**Modeling**
-Four predictive models were trained and compared:
-- Logistic Regression (baseline)
-- Decision Tree
-- Random Forest
-- XGBoost
-
-Hyperparameter tuning was performed using GridSearchCV.
+**Predictive Modeling**
+Four models were trained and compared: Logistic Regression, Decision Tree, Random Forest, and XGBoost. Hyperparameters were optimized using GridSearchCV.
 
 **Evaluation**
-Models were evaluated using precision, recall, F1-score, accuracy, and AUC-ROC on a held-out test dataset (80/20 split).
+Hyperparameters were tuned using GridSearchCV with cross-validation on the training set. The best-performing model was then evaluated on the held-out test set using accuracy, precision, recall, F1-score, and AUC-ROC.
 
 ---
 
 ## Key Insights
 
-### Three employee segments show very different attrition risks
+### Employee segments show large differences in attrition risk
 
 ![Employee Clusters](employee_clusters.png)
 
-K-Means clustering identified three employee segments with significantly different attrition risks.
+K-Means clustering identified three distinct employee segments with very different attrition rates.
 
 | Cluster | Label | Satisfaction | Monthly Hours | Tenure | Attrition Rate |
 |---------|-------|-------------|---------------|--------|----------------|
@@ -70,15 +60,15 @@ K-Means clustering identified three employee segments with significantly differe
 | 1 | Healthy | 0.76 | 211 hrs | 2.9 yrs | 2% |
 | 2 | Disengaged | 0.53 | 158 hrs | 3.1 yrs | 26% |
 
-Overworked employees show the highest attrition risk at 42%. Disengaged employees with lower working hours show 26% attrition. Employees in the healthy segment have only 2% attrition.
+Employees in the overworked segment have the highest attrition risk, while the healthy segment shows very low turnover.
 
 ---
 
-### Satisfaction level is the strongest predictor of attrition
+### Employee satisfaction strongly predicts attrition
 
 ![Feature Distribution by Left Status](feature_distribution.png)
 
-Employees who left report significantly lower satisfaction levels. The 3–5 year tenure window represents the highest risk period for dissatisfaction-driven departures.
+Employees who left the company report significantly lower satisfaction levels. Attrition risk also increases during the 3–5 year tenure window, suggesting that mid-tenure employees are more likely to leave.
 
 ![Tenure vs Satisfaction Level](tenure_vs_satisfaction.png)
 
@@ -88,19 +78,21 @@ Employees who left report significantly lower satisfaction levels. The 3–5 yea
 
 ![Churn Rate by Salary and Department](churn_rate.png)
 
-Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms this relationship is statistically significant (χ² = 175.21, p < 0.001). Department differences are relatively small, with attrition rates ranging from 12% to 19% across departments.
+Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms that salary level and attrition are significantly associated (χ² = 175.21, p < 0.001).
+
+Department differences are relatively small, with attrition ranging from 12%–19% across departments.
 
 ---
 
-### Overwork without recognition increases attrition risk
+### Overwork without promotion increases attrition risk
 
 ![Promotion vs Monthly Hours](promotion_vs_hours.png)
 
-Employees working 250+ monthly hours without a promotion in the past five years show the highest departure rates. This suggests that unrecognized overwork is a major driver of turnover.
+Employees working 250+ monthly hours without a promotion in the past five years show the highest departure rates, suggesting that unrecognized overwork contributes to turnover.
 
 ---
 
-### XGBoost is the best performing model
+### XGBoost provides the strongest predictive performance
 
 | Model | Precision | Recall | F1 | Accuracy | AUC |
 |-------|-----------|--------|----|----------|-----|
@@ -111,7 +103,7 @@ Employees working 250+ monthly hours without a promotion in the past five years 
 
 ![XGBoost Feature Importance](feature_importance.png)
 
-XGBoost achieved the strongest overall performance and provides the best balance between recall and predictive accuracy. The model correctly identified 368 of 401 employees who left in the test dataset. The most important predictive features include tenure, satisfaction level, and employee cluster label.
+XGBoost achieved the best overall performance and correctly identified 368 of 401 employees who left in the test dataset. The most important predictors include tenure, satisfaction level, and employee cluster membership.
 
 ![XGBoost Confusion Matrix](confusion_matrix.png)
 
@@ -119,11 +111,11 @@ XGBoost achieved the strongest overall performance and provides the best balance
 
 ## Business Recommendations
 
-- **Prioritize intervention for overworked employees** — Employees in the high-workload cluster show the highest attrition risk. HR should monitor employees with long working hours, 4+ years of tenure, and declining satisfaction scores.
-- **Address workload imbalance** — Both excessive workload and under-utilization are associated with higher attrition. Reviewing project allocation and setting healthier workload benchmarks may reduce turnover.
-- **Review compensation for lower-salary employees** — Since salary level is significantly associated with attrition, targeted salary reviews or additional benefits could help retain employees in this group.
-- **Strengthen promotion and recognition pathways** — Employees working long hours without recent promotions show elevated departure rates. Clear career development paths and recognition programs may improve retention among high performers.
-- **Focus on the 3–5 year tenure window** — This period represents the highest attrition risk. Structured career discussions and development planning during this stage may help prevent voluntary departures.
+- **Prioritize high-risk employees** — Employees in the overworked cluster show the highest attrition risk. HR should monitor employees with high workloads, long tenure, and declining satisfaction scores.
+- **Address workload imbalance** — Both excessive workload and under-utilization are associated with higher attrition. Adjusting project allocation and workload expectations may reduce turnover.
+- **Review compensation for lower-salary employees** — Since salary level is significantly associated with attrition, targeted salary reviews or benefits adjustments may improve retention.
+- **Strengthen promotion and recognition pathways** — Employees working long hours without promotions show elevated departure rates. Clear career development paths and recognition programs could improve retention.
+- **Focus on the 3–5 year tenure window** — Mid-tenure employees show the highest attrition risk. Structured career development discussions during this period may help prevent voluntary departures.
 
 ---
 
@@ -146,4 +138,4 @@ XGBoost achieved the strongest overall performance and provides the best balance
 
 ## Skills Demonstrated
 
-`Python` `Exploratory Data Analysis` `Hypothesis Testing` `K-Means Clustering` `Feature Engineering` `Machine Learning Modeling` `Hyperparameter Tuning (GridSearchCV)` `Model Evaluation` `XGBoost` `Random Forest`
+`Python` `Exploratory Data Analysis` `Hypothesis Testing` `K-Means Clustering` `Feature Engineering` `Machine Learning Modeling` `Hyperparameter Tuning (GridSearchCV)` `Model Evaluation` `Random Forest` `XGBoost`
