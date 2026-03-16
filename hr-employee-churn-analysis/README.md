@@ -48,11 +48,19 @@ Models were evaluated using precision, recall, F1-score, accuracy, and AUC-ROC o
 
 ## Key Insights
 
-### Two distinct high-risk employee groups
+### Three distinct employee segments with different attrition risks
 
 ![Employee Clusters](employee_clusters.png)
 
-Analysis reveals two main attrition patterns. Overworked employees (high working hours and strong performance but low satisfaction) show a 42% attrition rate. Disengaged employees (low hours and low performance) show a 26% attrition rate. Employees in the healthy segment have only 2% attrition.
+K-Means clustering identified three distinct employee segments with significantly different attrition risks.
+
+| Cluster | Label | Satisfaction | Monthly Hours | Tenure | Attrition Rate |
+|---------|-------|-------------|---------------|--------|----------------|
+| 0 | Overworked | 0.42 | 234 hrs | 5.1 yrs | 42% |
+| 1 | Healthy | 0.76 | 211 hrs | 2.9 yrs | 2% |
+| 2 | Disengaged | 0.53 | 158 hrs | 3.1 yrs | 26% |
+
+Overworked employees show the highest attrition risk at 42%. Disengaged employees with low hours and low performance show 26% attrition. Employees in the healthy segment have only 2% attrition.
 
 ---
 
@@ -68,9 +76,9 @@ Employees who left report significantly lower satisfaction levels. The 3–5 yea
 
 ### Salary level is significantly associated with attrition
 
-![Churn Rate by Salary Level](churn_rate.png)
+![Churn Rate by Salary and Department](churn_rate.png)
 
-Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms this relationship is statistically significant (χ² = 175.21, p < 0.001).
+Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms this relationship is statistically significant (χ² = 175.21, p < 0.001). Department has minimal impact on attrition, with all departments ranging between 12%–19%.
 
 ---
 
@@ -106,6 +114,23 @@ XGBoost achieved an AUC of 0.987 and recall of 0.92, correctly identifying 368 o
 - **Review compensation for lower-salary employees** — Since salary level is significantly associated with attrition, targeted compensation reviews or additional benefits may help retain employees in this group.
 - **Strengthen promotion and recognition pathways** — Employees working long hours without recent promotions show elevated departure rates. Clearer career development pathways and recognition programs could improve retention among high performers.
 - **Focus on the 3–5 year tenure window** — This period represents the highest attrition risk. Structured career conversations and development planning at this stage could help prevent voluntary departures.
+
+---
+
+## Data Dictionary
+
+| Column | Type | Description |
+|--------|------|-------------|
+| satisfaction_level | float | Employee self-reported satisfaction level (0–1) |
+| last_evaluation | float | Score from the most recent performance review (0–1) |
+| number_project | int | Number of projects assigned to the employee |
+| average_monthly_hours | int | Average hours worked per month |
+| tenure | int | Years the employee has worked at the company |
+| work_accident | int | Whether the employee experienced a workplace accident (0/1) |
+| promotion_last_5years | int | Whether the employee was promoted in the last 5 years (0/1) |
+| department | object | Employee department |
+| salary | object | Salary level (low, medium, high) |
+| left | int | Whether the employee left the company (0/1) |
 
 ---
 
