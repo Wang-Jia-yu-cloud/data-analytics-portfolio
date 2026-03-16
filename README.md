@@ -1,5 +1,4 @@
 # Data Analytics Portfolio
-
 A collection of end-to-end data analytics projects covering Python, SQL, machine learning, and data visualization.
 
 ---
@@ -42,6 +41,14 @@ Classified TikTok videos as claim or opinion using machine learning to support c
 
 ---
 
-## Skills
+### 5. HR Employee Attrition Analysis
+Analyzed employee survey data to identify drivers of attrition and predict which employees are most likely to leave, using K-Means clustering and tree-based models.
 
-Python · SQL · Tableau · Machine Learning · Hypothesis Testing · Feature Engineering · Statistical Analysis · Data Visualization · EDA
+**Tech:** Python · Scikit-learn · XGBoost  
+**Key result:** XGBoost achieved AUC of 0.987; tenure, satisfaction, and employee cluster identified as top predictors  
+🔗 [View Project](./hr-employee-churn-analysis)
+
+---
+
+## Skills
+Python · SQL · Tableau · Machine Learning · Hypothesis Testing · Feature Engineering · K-Means Clustering · Statistical Analysis · Data Visualization · EDA
