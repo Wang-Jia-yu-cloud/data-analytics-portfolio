@@ -1,14 +1,16 @@
-# HR Employee Churn Analysis — Salifort Motors
+# HR Employee Attrition Analysis — Salifort Motors
 
 ## Executive Summary
 
-Salifort Motors is experiencing a high employee turnover rate, creating both operational disruption and significant recruitment and training costs. To better understand the problem, the HR team conducted an employee survey to identify factors associated with attrition.
+Salifort Motors is experiencing a high employee turnover rate, leading to operational disruption and increased recruitment and training costs. To better understand the issue, the HR team conducted an employee survey to identify factors associated with attrition.
 
-This project analyzes the survey data to identify the drivers of employee turnover and to build predictive models that estimate the likelihood of employees leaving the company.
+This project analyzes the survey data to identify the main drivers of employee turnover and build models that predict which employees are most likely to leave.
 
-After removing duplicate records, 11,991 employee records were included in the analysis. Exploratory analysis shows that satisfaction level, tenure, and workload are the strongest drivers of attrition. Clustering analysis further reveals three employee segments with significantly different attrition risks.
+After removing duplicate records, 11,991 employee records were included in the analysis. Exploratory analysis shows that satisfaction level, tenure, and workload are the strongest factors associated with attrition. Clustering analysis further identified three employee segments with very different attrition risks.
 
-Among the models tested, XGBoost achieved the best performance, with 97% accuracy, an AUC of 0.987, and an F1-score of 0.91 on the test set.
+Several predictive models were tested, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. XGBoost achieved the best performance, with 97% accuracy, an AUC of 0.987, and an F1-score of 0.91 on the test set.
+
+These findings help the company better understand employee turnover patterns and support more targeted retention strategies.
 
 ---
 
@@ -29,6 +31,8 @@ The dataset contains 14,999 employee records (11,991 after removing duplicates),
 
 ## Analysis Approach
 
+The analysis followed a structured workflow combining exploratory analysis, statistical testing, employee segmentation, and predictive modeling.
+
 **Exploratory Data Analysis**
 Compared satisfaction levels, workload, and tenure distributions between employees who stayed and those who left. Key visualizations include KDE plots, scatterplots, and a correlation heatmap.
 
@@ -39,7 +43,13 @@ A Chi-square test was conducted to evaluate whether salary level is associated w
 K-Means clustering (k=3) was applied to identify groups of employees with similar work patterns and attrition risk profiles.
 
 **Modeling**
-Four predictive models were trained and compared: Logistic Regression (baseline), Decision Tree, Random Forest, and XGBoost. Hyperparameter tuning was performed using GridSearchCV.
+Four predictive models were trained and compared:
+- Logistic Regression (baseline)
+- Decision Tree
+- Random Forest
+- XGBoost
+
+Hyperparameter tuning was performed using GridSearchCV.
 
 **Evaluation**
 Models were evaluated using precision, recall, F1-score, accuracy, and AUC-ROC on a held-out test dataset (80/20 split).
@@ -48,11 +58,11 @@ Models were evaluated using precision, recall, F1-score, accuracy, and AUC-ROC o
 
 ## Key Insights
 
-### Three distinct employee segments with different attrition risks
+### Three employee segments show very different attrition risks
 
 ![Employee Clusters](employee_clusters.png)
 
-K-Means clustering identified three distinct employee segments with significantly different attrition risks.
+K-Means clustering identified three employee segments with significantly different attrition risks.
 
 | Cluster | Label | Satisfaction | Monthly Hours | Tenure | Attrition Rate |
 |---------|-------|-------------|---------------|--------|----------------|
@@ -60,7 +70,7 @@ K-Means clustering identified three distinct employee segments with significantl
 | 1 | Healthy | 0.76 | 211 hrs | 2.9 yrs | 2% |
 | 2 | Disengaged | 0.53 | 158 hrs | 3.1 yrs | 26% |
 
-Overworked employees show the highest attrition risk at 42%. Disengaged employees with low hours and low performance show 26% attrition. Employees in the healthy segment have only 2% attrition.
+Overworked employees show the highest attrition risk at 42%. Disengaged employees with lower working hours show 26% attrition. Employees in the healthy segment have only 2% attrition.
 
 ---
 
@@ -78,7 +88,7 @@ Employees who left report significantly lower satisfaction levels. The 3–5 yea
 
 ![Churn Rate by Salary and Department](churn_rate.png)
 
-Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms this relationship is statistically significant (χ² = 175.21, p < 0.001). Department has minimal impact on attrition, with all departments ranging between 12%–19%.
+Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for high-salary employees. A Chi-square test confirms this relationship is statistically significant (χ² = 175.21, p < 0.001). Department differences are relatively small, with attrition rates ranging from 12% to 19% across departments.
 
 ---
 
@@ -86,7 +96,7 @@ Employees with low salaries show a 20.5% attrition rate, compared with 4.8% for 
 
 ![Promotion vs Monthly Hours](promotion_vs_hours.png)
 
-Employees working 250+ monthly hours without a promotion in the past five years have the highest departure rates, suggesting that unrecognized overwork contributes strongly to turnover.
+Employees working 250+ monthly hours without a promotion in the past five years show the highest departure rates. This suggests that unrecognized overwork is a major driver of turnover.
 
 ---
 
@@ -101,7 +111,7 @@ Employees working 250+ monthly hours without a promotion in the past five years 
 
 ![XGBoost Feature Importance](feature_importance.png)
 
-XGBoost achieved an AUC of 0.987 and recall of 0.92, correctly identifying 368 of 401 employees who left in the test dataset. The most important predictive features include tenure, satisfaction level, and employee cluster label.
+XGBoost achieved the strongest overall performance and provides the best balance between recall and predictive accuracy. The model correctly identified 368 of 401 employees who left in the test dataset. The most important predictive features include tenure, satisfaction level, and employee cluster label.
 
 ![XGBoost Confusion Matrix](confusion_matrix.png)
 
@@ -109,11 +119,11 @@ XGBoost achieved an AUC of 0.987 and recall of 0.92, correctly identifying 368 o
 
 ## Business Recommendations
 
-- **Prioritize intervention for overworked employees** — Employees in the high-workload cluster show the highest attrition rate. HR should monitor employees with long working hours, 4+ years of tenure, and declining satisfaction scores.
-- **Address workload imbalance** — Both excessive workload and under-utilization are associated with attrition. Reviewing project allocation and establishing healthy workload benchmarks could reduce turnover risk.
-- **Review compensation for lower-salary employees** — Since salary level is significantly associated with attrition, targeted compensation reviews or additional benefits may help retain employees in this group.
-- **Strengthen promotion and recognition pathways** — Employees working long hours without recent promotions show elevated departure rates. Clearer career development pathways and recognition programs could improve retention among high performers.
-- **Focus on the 3–5 year tenure window** — This period represents the highest attrition risk. Structured career conversations and development planning at this stage could help prevent voluntary departures.
+- **Prioritize intervention for overworked employees** — Employees in the high-workload cluster show the highest attrition risk. HR should monitor employees with long working hours, 4+ years of tenure, and declining satisfaction scores.
+- **Address workload imbalance** — Both excessive workload and under-utilization are associated with higher attrition. Reviewing project allocation and setting healthier workload benchmarks may reduce turnover.
+- **Review compensation for lower-salary employees** — Since salary level is significantly associated with attrition, targeted salary reviews or additional benefits could help retain employees in this group.
+- **Strengthen promotion and recognition pathways** — Employees working long hours without recent promotions show elevated departure rates. Clear career development paths and recognition programs may improve retention among high performers.
+- **Focus on the 3–5 year tenure window** — This period represents the highest attrition risk. Structured career discussions and development planning during this stage may help prevent voluntary departures.
 
 ---
 
@@ -122,12 +132,12 @@ XGBoost achieved an AUC of 0.987 and recall of 0.92, correctly identifying 368 o
 | Column | Type | Description |
 |--------|------|-------------|
 | satisfaction_level | float | Employee self-reported satisfaction level (0–1) |
-| last_evaluation | float | Score from the most recent performance review (0–1) |
-| number_project | int | Number of projects assigned to the employee |
-| average_monthly_hours | int | Average hours worked per month |
-| tenure | int | Years the employee has worked at the company |
-| work_accident | int | Whether the employee experienced a workplace accident (0/1) |
-| promotion_last_5years | int | Whether the employee was promoted in the last 5 years (0/1) |
+| last_evaluation | float | Score from the most recent performance review |
+| number_project | int | Number of projects assigned |
+| average_monthly_hours | int | Average monthly working hours |
+| tenure | int | Years employed at the company |
+| work_accident | int | Whether the employee had a workplace accident (0/1) |
+| promotion_last_5years | int | Whether the employee was promoted in the past 5 years (0/1) |
 | department | object | Employee department |
 | salary | object | Salary level (low, medium, high) |
 | left | int | Whether the employee left the company (0/1) |
