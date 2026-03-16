@@ -4,9 +4,9 @@
 
 Salifort Motors is experiencing elevated employee turnover, creating operational disruption and increased hiring costs. This project analyzes employee survey data to identify the key drivers of attrition and develop predictive models that identify employees at risk of leaving.
 
-After removing duplicate records, 11,991 employee records were analyzed. Exploratory analysis shows that employee satisfaction, tenure, and workload are the strongest factors associated with attrition. Clustering analysis further identified three employee segments with very different attrition risk levels.
+Exploratory analysis shows that employee satisfaction, tenure, and workload are the strongest factors associated with attrition. Clustering analysis further identified three employee segments with very different attrition risk levels.
 
-Several machine learning models were evaluated, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. XGBoost achieved the best performance, with 97% accuracy, 0.987 AUC, and an F1-score of 0.91 on the test set.
+Several models were trained and evaluated, including Logistic Regression, Decision Tree, Random Forest, and XGBoost. XGBoost achieved the best performance, with 97% accuracy, 0.987 AUC, and an F1-score of 0.91 on the test set.
 
 These results provide insights into employee turnover patterns and support more targeted retention strategies.
 
@@ -36,7 +36,7 @@ Compared satisfaction levels, workload, and tenure between employees who stayed 
 A Chi-square test was conducted to examine the relationship between salary level and employee attrition.
 
 **Employee Segmentation**
-K-Means clustering (k = 3) was used to identify groups of employees with similar work patterns and attrition risk.
+K-Means clustering was used to identify groups of employees with similar work patterns and attrition risk.
 
 **Predictive Modeling**
 Four models were trained and compared: Logistic Regression, Decision Tree, Random Forest, and XGBoost. Hyperparameters were optimized using GridSearchCV.
