@@ -1,54 +1,88 @@
 # Data Analytics Portfolio
-A collection of end-to-end data analytics projects covering Python, SQL, machine learning, and data visualization.
+> I turn data into decisions — from SQL analysis and predictive models to AI agents deployed in real-world applications.
+
+This portfolio includes six end-to-end projects across business intelligence, predictive modeling, and LLM-powered systems. Each project starts with a clear business question and delivers actionable insights or deployed solutions.
 
 ---
 
 ## Projects
 
 ### 1. E-Commerce Sales Analysis
-Analyzed e-commerce transactional data to understand revenue trends, product performance, and customer purchase behavior.
+**The question:** Where is revenue being left on the table?
 
-**Tech:** Python · MySQL · Tableau  
-**Key result:** Identified ¥993M revenue opportunity in high-traffic low-conversion products  
-🔗 [View Project](./ecommerce-sales-analysis)
+Analyzed transactional data to identify revenue trends, product performance, and gaps between traffic and conversion.
+
+- **Tech:** Python · MySQL · Tableau
+- **Key Insight:** Identified CNY 993M in potential revenue opportunity hidden in high-traffic, low-conversion products — often overlooked in standard dashboards.
+
+🔗 [View Project](https://github.com/Wang-Jia-yu-cloud/data-analytics-portfolio/tree/main/ecommerce-sales-analysis)
 
 ---
 
 ### 2. NYC Taxi Operational Performance Analysis
-Explored NYC yellow taxi trip data to evaluate demand patterns, revenue distribution, and tipping behavior.
+**The question:** When, where, and how do taxis generate revenue?
 
-**Tech:** Python · MySQL · Tableau  
-**Key result:** Evening commute peak identified; credit card dominates at 72.96%  
-🔗 [View Project](./nyc-taxi-analysis)
+Explored 1M+ yellow taxi trips to analyze demand patterns, revenue distribution, and tipping behavior across time and geography.
+
+- **Tech:** Python · MySQL · Tableau
+- **Key Insight:** Evening commute hours drive peak demand; credit card payments dominate (72.96%) and are associated with higher tipping rates.
+
+🔗 [View Project](https://github.com/Wang-Jia-yu-cloud/data-analytics-portfolio/tree/main/nyc-taxi-analysis)
 
 ---
 
 ### 3. Waze User Churn Analysis
-Analyzed user behavioral data to predict churn using hypothesis testing, logistic regression, and tree-based models (Random Forest, XGBoost).
+**The question:** Who is likely to churn, and why?
 
-**Tech:** Python · Scikit-learn · XGBoost  
-**Key result:** XGBoost achieved AUC of 0.689; identified top churn predictors  
-🔗 [View Project](./waze-user-analysis)
+Applied hypothesis testing and machine learning models (Logistic Regression, Random Forest, XGBoost) to predict user churn based on behavioral data.
+
+- **Tech:** Python · Scikit-learn · XGBoost
+- **Key Insight:** XGBoost achieved an AUC of 0.689; usage frequency and session patterns emerged as key early indicators of churn.
+
+🔗 [View Project](https://github.com/Wang-Jia-yu-cloud/data-analytics-portfolio/tree/main/waze-user-analysis)
 
 ---
 
 ### 4. TikTok Content Classification
-Classified TikTok videos as claim or opinion using machine learning to support content moderation and misinformation detection.
+**The question:** Can we distinguish factual claims from opinions?
 
-**Tech:** Python · Scikit-learn · XGBoost  
-**Key result:** Random Forest achieved 99% recall and 100% accuracy on the test set  
-🔗 [View Project](./tiktok-content-classification)
+Built a classification model to separate factual claims from opinion-based content, with applications in content moderation and misinformation detection.
+
+- **Tech:** Python · Scikit-learn · XGBoost
+- **Key Insight:** Random Forest achieved near-perfect performance (99% recall), indicating strong linguistic separability between claims and opinions.
+
+🔗 [View Project](https://github.com/Wang-Jia-yu-cloud/data-analytics-portfolio/tree/main/tiktok-content-classification)
 
 ---
 
 ### 5. HR Employee Attrition Analysis
-Analyzed employee survey data to identify drivers of attrition and predict which employees are most likely to leave, using K-Means clustering and tree-based models.
+**The question:** Which employees are most at risk of leaving?
 
-**Tech:** Python · Scikit-learn · XGBoost  
-**Key result:** XGBoost achieved AUC of 0.987; tenure, satisfaction, and employee cluster identified as top predictors  
-🔗 [View Project](./hr-employee-churn-analysis)
+Combined K-Means clustering with XGBoost to segment employees and predict attrition at an individual level.
+
+- **Tech:** Python · Scikit-learn · XGBoost
+- **Key Insight:** Achieved AUC of 0.987; tenure, satisfaction score, and cluster membership were the strongest predictors, with a clearly identifiable at-risk segment.
+
+🔗 [View Project](https://github.com/Wang-Jia-yu-cloud/data-analytics-portfolio/tree/main/hr-employee-churn-analysis)
+
+---
+
+### 6. ASB Customer Support Agent (RAG)
+**The question:** Can an AI chatbot provide accurate, context-aware banking support?
+
+Built an end-to-end Retrieval-Augmented Generation (RAG) system using 1,000+ real ASB help articles, with conversation memory, intent detection, and live deployment.
+
+- **Tech:** Python · OpenAI GPT-4o-mini · Pinecone · Streamlit
+- **Key Insight:** Delivered a production-style AI assistant capable of handling FAQs, product queries, and escalation scenarios — grounded in real documentation rather than model hallucination.
+
+🔗 [GitHub](https://github.com/Wang-Jia-yu-cloud/asb-customer-support-agent) · 🌐 [Live Demo](https://asb-customer-support-agent.streamlit.app)
 
 ---
 
 ## Skills
-Python · SQL · Tableau · Machine Learning · Hypothesis Testing · Feature Engineering · K-Means Clustering · Statistical Analysis · Data Visualization · EDA
+
+| Category | Tools & Technologies |
+|---|---|
+| **Languages & Tools** | Python · SQL · Tableau |
+| **Machine Learning & Statistics** | Scikit-learn · XGBoost · Random Forest · Logistic Regression · Hypothesis Testing · Feature Engineering · K-Means Clustering · EDA |
+| **AI / LLM Systems** | OpenAI API · RAG · Pinecone · Vector Databases · AI Agent Development |
