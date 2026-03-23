@@ -22,7 +22,7 @@ Analyzed transactional data to identify revenue trends, product performance, and
 ### 2. NYC Taxi Operational Performance Analysis
 **The question:** When, where, and how do taxis generate revenue?
 
-Explored 1M+ yellow taxi trips to analyze demand patterns, revenue distribution, and tipping behavior across time and geography.
+Explored 40 thousand+ yellow taxi trips to analyze demand patterns, revenue distribution, and tipping behavior across time and geography.
 
 - **Tech:** Python · MySQL · Tableau
 - **Key Insight:** Evening commute hours drive peak demand; credit card payments dominate (72.96%) and are associated with higher tipping rates.
